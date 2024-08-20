@@ -1,0 +1,72 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Actividades;
+use App\Models\Actividad;
+use Illuminate\Support\Facades\DB;
+use App\Models\Imagen;
+use App\Models\Sede;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        return view('inicio');
+    }
+    public function servicios()
+    {
+        return view('servicios');
+    }
+
+    public function plataformaEstrategica()
+    {
+        return view('plataformaEstrategica');
+    }
+    public function codigosdeEtica()
+    {
+        return view('codigosdeEtica');
+    }
+    public function estadosFinancieros()
+    {
+        return view('estadosFinancieros');
+    }
+    public function sarlaft()
+    {
+        return view('Sarlaft');
+    }
+    public function CalendaiodeActividades()
+    {
+        return view('CalendariodeActividades');
+    }
+    public function DerechosyDeberes()
+    {
+        return view('DerechosyDeberes');
+    }
+    public function ValoreAgregados()
+    {
+        return view('ValoreAgregados');
+    }
+    public function ActividadesPacientes()
+    {
+        $sedesactividad = DB::select('SELECT * FROM actividades INNER JOIN sedes ON actividades.sede_id = sedes.id '); // Actividad::paginate(5);
+        return view('actividadesPacientes', compact('sedesactividad'));
+    }
+
+    public function todasLasactividades($sede, $id)
+    {
+    
+        $idsede= $id;
+        $datos = $sede;
+        $actividadesimg = DB::select("SELECT * FROM sedes INNER JOIN actividades ON actividades.sede_id = sedes.id INNER JOIN imagenes_pacientes on imagenes_pacientes.id_actividades = actividades.id  AND sedes.id = $id ");
+        return  view('GaleriaActividades.todaslasactividades', compact('actividadesimg', 'datos'));
+    }
+    public function actividadGaleria($sede, $id)
+
+    {
+        
+        $datos = $sede;
+        $actividadesimg = DB::select("SELECT * FROM actividades INNER JOIN sedes ON actividades.sede_id = sedes.id and sede_id = $id");
+        return  view('GaleriaActividades.index', compact('actividadesimg', 'datos'));
+    }
+}

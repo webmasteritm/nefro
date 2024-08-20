@@ -1,0 +1,6513 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
+}
+
+a {
+    color: #444444;
+}
+
+a:hover {
+    color: #f57d00;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+
+.pre-loader {
+    background: #ffffff;
+    background-position: center center;
+    background-size: 13%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12345;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.pre-nefro {
+    background: #ffffff;
+    background-position: center center;
+    background-size: 13%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 12345;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pre-loader .loader-logo {
+    padding-bottom: 15px;
+}
+
+.pre-loader .loader-progress {
+    height: 8px;
+    border-radius: 15px;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    background: #ecf0f4;
+    overflow: hidden;
+}
+
+.pre-loader .bar {
+    width: 0%;
+    height: 8px;
+    display: block;
+    background: #f57d00;
+}
+
+.pre-loader .percent {
+    text-align: center;
+    font-size: 24px;
+    display: none;
+}
+
+.pre-loader .loading-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+}
+
+.pre-loader .preloader-circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-style: solid;
+    border-width: 1.9px;
+    border-top-color: #f57d00;
+    border-bottom-color: transparent;
+    border-left-color: #737373;
+    border-right-color: transparent;
+    z-index: 0;
+    left: 12px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+    box-shadow: 0 10px 50px 0 rgba(35, 181, 185, 0.15);
+    background-color: #ffffff;
+    -webkit-animation: zoom 2000ms infinite ease;
+    animation: zoom 2000ms infinite ease;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+
+.pre-loader .pre-loader-img {
+    position: absolute;
+    top: 49%;
+    z-index: 200;
+    left: 6px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-top: 3px;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+
+.pre-loader .pre-loader-img img {
+    max-width: 185px;
+}
+
+@-webkit-keyframes zoom {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+    }
+}
+
+.container {
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+}
+
+.back-to-top i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: #f57d00;
+    color: #fff;
+    transition: all 0.4s;
+}
+
+.back-to-top i:hover {
+    background: #f57d00;
+    color: #fff;
+}
+
+.datepicker-dropdown {
+    padding: 20px !important;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+
+#topbar {
+    background: #fff;
+    height: 30px;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+#topbar.topbar-scrolled {
+    top: -30px;
+}
+
+#topbar .contact-info a {
+    line-height: 1;
+    color: #444444;
+    transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+    color: #f57d00;
+}
+
+#topbar .contact-info i {
+    color: #f57d00;
+    padding-right: 4px;
+    margin-left: 15px;
+}
+
+#topbar .contact-info i:first-child {
+    margin-left: 0;
+}
+
+#topbar .social-links a {
+    color: #f57d00;
+    padding-left: 15px;
+    margin-top: 40px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+    color: #634321;
+}
+
+#topbar .social-links a:first-child {
+    border-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 10px 0;
+    top: 20px;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+}
+
+#header.header-scrolled {
+    top: 0;
+}
+
+#header .logo {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+    color: #2c4964;
+}
+
+#header .logo img {
+    max-height: 30px;
+}
+
+@media (max-width: 992px) {
+    #header {
+        top: 0;
+    }
+    #header .logo {
+        font-size: 28px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/* Desktop Navigation */
+
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu > ul {
+    display: flex;
+}
+
+.nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    padding: 8px 0 8px 20px;
+}
+
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: #2c4964;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    padding: 5px 2px;
+    border-bottom: 2px solid #fff;
+}
+
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+    color: #f57d00;
+    border-color: #f57d00;
+}
+
+.nav-menu .drop-down ul {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: calc(100% + 30px);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+}
+
+.nav-menu .drop-down:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+.nav-menu .drop-down li {
+    min-width: 180px;
+    position: relative;
+}
+
+.nav-menu .drop-down ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    color: #082744;
+    border: none;
+}
+
+.nav-menu .drop-down ul a:hover,
+.nav-menu .drop-down ul .active > a,
+.nav-menu .drop-down ul li:hover > a {
+    color: #f57d00;
+}
+
+.nav-menu .drop-down > a:after {
+    content: "\ea99";
+    font-family: IcoFont;
+    padding-left: 5px;
+}
+
+.nav-menu .drop-down .drop-down ul {
+    top: 0;
+    left: calc(100% - 30px);
+}
+
+.nav-menu .drop-down .drop-down:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+}
+
+.nav-menu .drop-down .drop-down > a {
+    padding-right: 35px;
+}
+
+.nav-menu .drop-down .drop-down > a:after {
+    content: "\eaa0";
+    font-family: IcoFont;
+    position: absolute;
+    right: 15px;
+}
+
+@media (max-width: 1366px) {
+    .nav-menu .drop-down .drop-down ul {
+        left: -90%;
+    }
+    .nav-menu .drop-down .drop-down:hover > ul {
+        left: -100%;
+    }
+    .nav-menu .drop-down .drop-down > a:after {
+        content: "\ea9d";
+    }
+}
+
+/* Get Startet Button */
+
+.appointment-btn {
+    margin-left: 25px;
+    background: #f57d00;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.appointment-btn:hover {
+    background: #166ab5;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .appointment-btn {
+        margin: 0 48px 0 0;
+        padding: 6px 18px;
+    }
+}
+
+/* Mobile Navigation */
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mobile-nav-toggle i {
+    color: #f57d00;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: #fff;
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.mobile-nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-nav a {
+    display: block;
+    position: relative;
+    color: #2c4964;
+    padding: 10px 20px;
+    font-weight: 500;
+    outline: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
+    color: #f57d00;
+    text-decoration: none;
+}
+
+.mobile-nav .drop-down > a:after {
+    content: "\ea99";
+    font-family: IcoFont;
+    padding-left: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+    content: "\eaa1";
+}
+
+.mobile-nav .drop-down > a {
+    padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+    display: none;
+    overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+    padding-left: 20px;
+}
+
+.mobile-nav-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(28, 47, 65, 0.6);
+    overflow: hidden;
+    display: none;
+    transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+#hero {
+    width: 100%;
+    height: 85vh;
+    background: url("../../assets/img/slide/slider11.jpg") top center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -200px;
+}
+
+#hero .container {
+    position: relative;
+    width: 380px;
+    height: 110px;
+}
+
+#hero .carousel-inner .carousel-item .container h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #2c4964;
+}
+
+#hero h2 {
+    color: #2c4964;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+
+#hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #e6dfd7;
+}
+
+#hero .btn-get-started:hover {
+    background: #3291e6;
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 992px) {
+    #hero {
+        margin-bottom: 0;
+        height: 100vh;
+    }
+    #hero .container {
+        padding-bottom: 33px;
+    }
+    #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    #hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-height: 500px) {
+    #hero {
+        height: auto;
+    }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+.section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-bg {
+    background-color: #ece9e5;
+}
+
+.section-title {
+    text-align: left 12px;
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #2c4964;
+}
+
+/* .section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+} */
+
+/* .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ee7830;
+    bottom: 0;
+    left: calc(50% - 20px);
+} */
+
+/* .section-title p {
+    margin-bottom: 0;
+} */
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: #f1f7fd;
+    min-height: 40px;
+    margin-top: 120px;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs {
+        margin-top: 63px;
+    }
+}
+
+.breadcrumbs h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs h2 {
+        margin: 0 0 10px 0;
+    }
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+    .breadcrumbs ol {
+        display: block;
+    }
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+
+.why-us .content {
+    padding: 30px;
+    background: #f57d00;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.why-us .content h3 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.why-us .content p {
+    margin-bottom: 30px;
+}
+
+.why-us .content .more-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 30px 8px 30px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease-in-out 0.4s;
+}
+
+.why-us .content .more-btn i {
+    font-size: 14px;
+}
+
+.why-us .content .more-btn:hover {
+    color: #f57d00;
+    background: #fff;
+}
+
+.why-us .icon-boxes .icon-box {
+    text-align: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+}
+
+.why-us .icon-boxes .icon-box i {
+    font-size: 40px;
+    color: #f57d00;
+    margin-bottom: 30px;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
+.why-us .icon-boxes .icon-box p {
+    font-size: 15px;
+    color: #848484;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+.about .icon-boxes h4 {
+    font-size: 18px;
+    color: #f57d00;
+    margin-bottom: 15px;
+}
+
+.about .icon-boxes h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f57d00;
+    margin-bottom: 15px;
+}
+
+.about .icon-box {
+    margin-top: 40px;
+}
+
+.about .icon-box .icon {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 2px solid #737373;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.about .icon-box .icon i {
+    color: #f57d00;
+    font-size: 32px;
+}
+
+.about .icon-box:hover .icon {
+    background: #f57d00;
+    border-color: #f57d00;
+}
+
+.about .icon-box:hover .icon i {
+    color: #fff;
+}
+
+.about .icon-box .title {
+    margin-left: 85px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.about .icon-box .title a {
+    color: #646566;
+    transition: 0.3s;
+}
+
+.about .icon-box .title a:hover {
+    color: #f57d00;
+}
+
+.about .icon-box .description {
+    margin-left: 85px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.about .video-box {
+    background: url("../img/about.png") center center no-repeat;
+    background-size: contain;
+    min-height: 500px;
+}
+
+.about .play-btn {
+    width: 94px;
+    height: 94px;
+    background: radial-gradient(#f57d00 50%, rgba(149, 150, 149, 0.897) 52%);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: calc(50% - 47px);
+    top: calc(50% - 47px);
+    overflow: hidden;
+}
+
+.about .play-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 100;
+    transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.about .play-btn::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation: pulsate-btn 2s;
+    animation: pulsate-btn 2s;
+    -webkit-animation-direction: forwards;
+    animation-direction: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps;
+    animation-timing-function: steps;
+    opacity: 1;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 145, 2, 0.822);
+    top: -15%;
+    left: -15%;
+    background: rgba(198, 16, 0, 0);
+}
+
+.about .play-btn:hover::after {
+    border-left: 15px solid #f57d00;
+    transform: scale(20);
+}
+
+.about .play-btn:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 200;
+    -webkit-animation: none;
+    animation: none;
+    border-radius: 0;
+}
+
+@-webkit-keyframes pulsate-btn {
+    0% {
+        transform: scale(0.6, 0.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+@keyframes pulsate-btn {
+    0% {
+        transform: scale(0.6, 0.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+
+.counts {
+    background: #f1f7fd;
+    padding: 70px 0 60px;
+}
+
+.counts .count-box {
+    padding: 30px 30px 25px 30px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background: #fff;
+}
+
+.counts .count-box i {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    background: #1977cc;
+    padding: 12px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.counts .count-box span {
+    font-size: 36px;
+    display: block;
+    font-weight: 600;
+    color: #082744;
+}
+
+.counts .count-box p {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+menu
+--------------------------------------------------------------*/
+
+.services-wrap .services-list .btn-custom span {
+    color: #fff;
+}
+
+@media (max-width: 767.98px) {
+    .services-wrap .services-list .btn-custom {
+        right: -150px;
+    }
+}
+
+.services-wrap .services-list:hover {
+    background: #ff9002;
+    color: #fff;
+}
+
+.services-wrap .services-list:hover .btn-custom {
+    background: #ff9002;
+}
+
+.services-wrap .services-list:hover .btn-custom span {
+    color: #fff;
+}
+.services-wrap {
+    position: relative;
+    z-index: 0;
+}
+
+.services-wrap .services-list:hover .btn-custom span {
+    color: #fff;
+}
+.services-wrap {
+    width: 100%;
+}
+
+.services-wrap .services-list {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: -20px;
+    padding: 20px 30px;
+    background: #fff;
+    color: #000000;
+    border-radius: 4px;
+    position: relative;
+    display: block;
+    -webkit-box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 767.98px) {
+    .services-wrap .services-list {
+        padding-right: 50px;
+    }
+}
+.services-wrap .services-list .btn-custom {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff9002;
+    opacity: 1;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+.services .icon-box {
+    /* text-align: center;
+     border: 1px solid #ece9e5;
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s; */
+    border-radius: 5%;
+    text-align: center;
+    max-width: 370px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 66px 15px 50px;
+    background: #ffffff;
+    box-shadow: 0 0 13px -4px rgba(0, 0, 0, 0.17);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.services .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #f57d00;
+    border-radius: 5px;
+    transition: all 0.3s ease-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transform-style: preserve-3d;
+}
+
+.services .icon-box .icon i {
+    color: #fff;
+    font-size: 28px;
+}
+
+.services .icon-box .icon::before {
+    position: absolute;
+    content: "";
+    left: -8px;
+    top: -8px;
+    height: 100%;
+    width: 100%;
+    background: #ece9e5;
+    border-radius: 5px;
+    transition: all 0.3s ease-out 0s;
+    transform: translateZ(-1px);
+}
+
+.services .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.services .icon-box h4 a {
+    color: #2c4964;
+}
+
+.services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.services .icon-box:hover {
+    background: #f57d00;
+    border-color: #f57d00;
+}
+
+.services .icon-box:hover .icon {
+    background: #fff;
+}
+
+.services .icon-box:hover .icon i {
+    color: #f57d00;
+}
+
+.services .icon-box:hover .icon::before {
+    background: #f57d00;
+}
+
+.services .icon-box:hover h6 a,
+.services .icon-box:hover p {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Appointments
+--------------------------------------------------------------*/
+
+.appointment .php-email-form {
+    width: 100%;
+}
+
+.appointment .php-email-form .form-group {
+    padding-bottom: 8px;
+}
+
+.appointment .php-email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.appointment .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.appointment .php-email-form .error-message br + br {
+    margin-top: 25px;
+}
+
+.appointment .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.appointment .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.appointment .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+
+.appointment .php-email-form input,
+.appointment .php-email-form textarea,
+.appointment .php-email-form select {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 10px !important;
+}
+
+.appointment .php-email-form input:focus,
+.appointment .php-email-form textarea:focus,
+.appointment .php-email-form select:focus {
+    border-color: #1977cc;
+}
+
+.appointment .php-email-form input,
+.appointment .php-email-form select {
+    height: 44px;
+}
+
+.appointment .php-email-form textarea {
+    padding: 10px 12px;
+}
+
+.appointment .php-email-form button[type="submit"] {
+    background: #1977cc;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.appointment .php-email-form button[type="submit"]:hover {
+    background: #1c84e3;
+}
+
+/*--------------------------------------------------------------
+# Departments
+--------------------------------------------------------------*/
+
+.departments {
+    overflow: hidden;
+}
+
+.departments .nav-tabs {
+    border: 0;
+    font-size: 15px;
+}
+
+.departments .nav-link {
+    border: 0;
+    padding: 12px 15px 12px 0;
+    transition: 0.3s;
+    color: #777777;
+    border-radius: 0;
+    border-right: 2px solid #ebf1f6;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.departments .nav-link:hover {
+    color: #f57d00;
+}
+
+.departments .nav-link.active {
+    color: #f57d00;
+    border-color: #f57d00;
+}
+
+.departments .tab-pane.active {
+    -webkit-animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.departments .details h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f57d00;
+}
+
+.departments .details p {
+    color: #777777;
+}
+
+.departments .details p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    .departments .nav-link {
+        border: 0;
+        padding: 15px;
+    }
+    .departments .nav-link.active {
+        color: #fff;
+        background: #f57d00;
+    }
+}
+
+/*--------------------------------------------------------------
+# Doctors
+--------------------------------------------------------------*/
+
+.doctors {
+    background: #fff;
+}
+
+.doctors .member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.doctors .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.doctors .member .pic img {
+    transition: ease-in-out 0.3s;
+}
+
+.doctors .member:hover img {
+    transform: scale(1.1);
+}
+
+.doctors .member .member-info {
+    padding-left: 30px;
+}
+
+.doctors .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #2c4964;
+}
+
+.doctors .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+}
+
+.doctors .member span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #b2c8dd;
+    bottom: 0;
+    left: 0;
+}
+
+.doctors .member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+
+.doctors .member .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.doctors .member .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #a0bcd5;
+}
+
+.doctors .member .social a i {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 2px;
+}
+
+.doctors .member .social a:hover {
+    background: #1977cc;
+}
+
+.doctors .member .social a + a {
+    margin-left: 8px;
+}
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+
+.faq .faq-list {
+    padding: 0 100px;
+}
+
+.faq .faq-list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.faq .faq-list li + li {
+    margin-top: 15px;
+}
+
+.faq .faq-list li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+}
+
+.faq .faq-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0 30px;
+    outline: none;
+}
+
+.faq .faq-list .icon-help {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    color: #f57d00;
+}
+
+.faq .faq-list .icofont-clock-time {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    color: #5a5a5a;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faq .faq-list p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+    display: none;
+}
+
+.faq .faq-list a.collapsed {
+    color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+    color: #f57d00;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+    display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .faq .faq-list {
+        padding: 0;
+    }
+}
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+
+.testimonials .testimonial-wrap {
+    padding-left: 90px;
+}
+
+.testimonials .testimonial-item {
+    box-sizing: content-box;
+    padding: 30px 30px 30px 60px;
+    margin: 30px 15px;
+    min-height: 100px;
+    box-shadow: 0px 2px 12px rgba(44, 73, 100, 0.08);
+    position: relative;
+    background: rgb(255, 255, 255);
+}
+
+.testimonials .testimonial-item .testimonial-img {
+    width: 390px;
+    border-radius: 20px;
+    border: 6px solid #fff;
+    position: absolute;
+    left: 5%;
+}
+
+.testimonials .testimonial-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+    color: #badaf7;
+    font-size: 66px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+}
+
+.testimonials .testimonial-item p {
+    font-style: italic;
+    margin: 15px auto 15px auto;
+}
+
+.testimonials .owl-nav,
+.testimonials .owl-dots {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.testimonials .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd !important;
+}
+
+.testimonials .owl-dot.active {
+    background-color: #f57d00 !important;
+}
+
+@media (max-width: 767px) {
+    .testimonials .testimonial-wrap {
+        padding-left: 0;
+    }
+    .testimonials .testimonial-item {
+        padding: 80px;
+        margin: 85px;
+    }
+    .testimonials .testimonial-item .testimonial-img {
+        position: static;
+        left: auto;
+    }
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+    transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery .gallery-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #111;
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+
+.contact-form {
+    padding-top: 0px;
+    margin-left: 20%;
+    width: 1200px;
+}
+.contact .info {
+    width: 100%;
+    background: #fff;
+    border: #f57d00;
+}
+
+.contact .info i {
+    font-size: 20px;
+    color: #f57d00;
+    float: left;
+
+    width: 44px;
+    height: 44px;
+    background: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c4964;
+}
+
+.contact .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #2c4964;
+}
+
+.contact .info .email,
+.contact .info .phone {
+    margin-top: 40px;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+    background: #f57d00;
+    color: #fff;
+}
+
+.contact .php-email-form {
+    width: 100%;
+    background: #fff;
+}
+
+.contact .php-email-form .form-group {
+    padding-bottom: 8px;
+}
+
+.contact .php-email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact .php-email-form .error-message br + br {
+    margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 2s linear infinite;
+    animation: animate-loading 2s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.contact .php-email-form input {
+    height: 44px;
+}
+
+.contact .php-email-form textarea {
+    padding: 10px 12px;
+}
+
+.contact .php-email-form button[type="submit"] {
+    background: #f57d00;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+    background: #fff;
+    color: #f57d00;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------------------------------------------------
+# Featured Services
+--------------------------------------------------------------*/
+
+.featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.featured-services .icon-box::before {
+    content: "";
+    position: absolute;
+    background: #d9f1f2;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.featured-services .icon-box:hover::before {
+    background: #f57d00;
+    top: 0;
+    border-radius: 0px;
+}
+
+.featured-services .icon {
+    margin-bottom: 15px;
+}
+
+.featured-services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color: #f57d00;
+    transition: all 0.3s ease-in-out;
+}
+
+.featured-services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.featured-services .title a {
+    color: #111;
+}
+
+.featured-services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+.featured-services .icon-box:hover .title a,
+.featured-services .icon-box:hover .description {
+    color: #fff;
+}
+
+.featured-services .icon-box:hover .icon i {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    color: #444444;
+    font-size: 14px;
+    background: #f1f7fd;
+}
+
+#footer .footer-top {
+    padding: 60px 0 30px 0;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+}
+
+#footer .footer-top .footer-contact {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h4 {
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+}
+
+#footer .footer-top .footer-contact p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Raleway", sans-serif;
+    color: #777777;
+}
+
+#footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #f57d00;
+    font-size: 18px;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+    color: #777777;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+    text-decoration: none;
+    color: #f57d00;
+}
+
+#footer .footer-newsletter {
+    font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 50px;
+    text-align: left;
+    border: 1px solid #bfdcf7;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+    border: 0;
+    padding: 4px 8px;
+    width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px;
+    background: #f57d00;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+    background: #f57d00;
+}
+
+#footer .credits {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #444444;
+}
+
+#footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #f57d00;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+    background: #fff;
+    color: #f57d00;
+    text-decoration: none;
+}
+
+.service_area {
+    margin-top: 10%;
+    background: #f57d00;
+}
+
+.service_area .single_service {
+    padding: 10px 30px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 3, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+    .service_area .single_service {
+        padding: 50px 20px;
+    }
+}
+
+/* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+
+.service_area .single_service .icon {
+    margin-bottom: 0px;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+
+.service_area .single_service .icon i {
+    font-size: 40px;
+    color: #fff;
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+
+.service_area .single_service h4 {
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 15, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+    .service_area .single_service h3 {
+        font-size: 20px;
+    }
+}
+
+/* line 23, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+
+.service_area .single_service p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 26px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 34, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
+    .service_area .single_service .boxed-btn3-white {
+        padding: 5px 10px;
+    }
+}
+
+/* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss col-xl-3 col-md-4" */
+
+.service_area .col-xl-3:nth-child(2n + 2) .single_service {
+    background: #737373;
+}
+
+.boxed-btn3-white {
+    color: #fff;
+    display: inline-block;
+    padding: 9px 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    border: 0;
+    border: 1px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff !important;
+    text-transform: capitalize;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* line 80, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white:hover {
+    background: #fff;
+    color: #f57d00 !important;
+    border: 1px solid transparent;
+}
+
+/* line 85, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white:focus {
+    outline: none;
+}
+
+/* line 88, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white.large-width {
+    width: 220px;
+}
+
+/* line 93, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white-2 {
+    color: #f57d00 !important;
+    display: inline-block;
+    padding: 9px 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    border: 0;
+    border: 1px solid #f57d00;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* line 108, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white-2:hover {
+    background: #f57d00;
+    color: #fff !important;
+    border: 1px solid transparent;
+}
+
+/* line 113, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white-2:focus {
+    outline: none;
+}
+
+/* line 116, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+
+.boxed-btn3-white-2.large-width {
+    width: 220px;
+}
+
+#hero {
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(60, 60, 60, 0.8);
+    overflow: hidden;
+    position: relative;
+}
+
+#hero .carousel,
+#hero .carousel-inner,
+#hero .carousel-item,
+#hero .carousel-item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+#hero .carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#hero .container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.788);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-top: 6px solid #f57d00;
+}
+
+@media (max-width: 360px) {
+    #hero .container {
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+}
+
+#hero h2 {
+    color: #2f2f2f;
+    margin-bottom: 3px;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+#hero p {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    margin: 0 auto 30px auto;
+    color: #555555;
+}
+
+#hero .carousel-inner .carousel-item {
+    transition-property: opacity;
+    background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+    opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+    transition: 0.1s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev,
+#hero .carousel-control-next {
+    width: 10%;
+    top: 112px;
+}
+
+@media (max-width: 992px) {
+    #hero .carousel-control-prev,
+    #hero .carousel-control-next {
+        top: 66px;
+    }
+}
+
+#hero .carousel-control-next-icon,
+#hero .carousel-control-prev-icon {
+    background: none;
+    font-size: 36px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+    background: rgba(235, 132, 14, 0.966);
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.1s;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#hero .carousel-control-next-icon:hover,
+#hero .carousel-control-prev-icon:hover {
+    background: rgb(231, 127, 9);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#hero .carousel-indicators li {
+    cursor: pointer;
+    background: #f57d00;
+    overflow: hidden;
+    border: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    opacity: 0.6;
+    transition: 0.1s;
+}
+
+#hero .carousel-indicators li.active {
+    opacity: 1;
+    background: #f57d00;
+}
+
+#hero .btn-get-started {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 4px;
+    transition: 0.1s;
+    line-height: 1;
+    color: #fff;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    background: #f57d00;
+}
+
+#hero .btn-get-started:hover {
+    background: #f57d00;
+}
+
+@media (max-width: 992px) {
+    #hero {
+        height: 100vh;
+    }
+    #hero .container {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #hero .carousel-control-prev,
+    #hero .carousel-control-next {
+        width: 5%;
+    }
+}
+
+@media (max-height: 500px) {
+    #hero {
+        height: 160vh;
+    }
+}
+/* INICIO DE SARLAFT CORREO*/
+
+.container-sarlaft {
+    text-align: center;
+}
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area {
+    background: #ece9e5;
+    padding-top: 120px;
+    padding-bottom: 90px;
+}
+
+/* line 5, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department {
+    background: #fff;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+    -moz-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* line 9, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_thumb {
+    overflow: hidden;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+/* line 13, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_thumb img {
+    width: 100%;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+/* line 19, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content {
+    padding: 22px 30px 24px 30px;
+}
+
+/* line 21, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content h3 {
+    margin-bottom: 0;
+}
+
+/* line 23, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content h3 a {
+    font-size: 22px;
+    color: #1f1f1f;
+    line-height: 33px;
+    font-weight: 500;
+}
+
+/* line 28, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content h3 a:hover {
+    color: #f57d00;
+}
+
+/* line 33, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #737373;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content a.learn_more {
+    color: #f57d00;
+    font-size: 16px;
+}
+
+/* line 43, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department .department_content a.learn_more:hover {
+    text-decoration: underline;
+}
+
+/* line 50, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.our_department_area .single_department:hover .department_thumb img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#slider {
+    overflow: hidden;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+/* Start Blog Area css
+============================================================================================ */
+
+/* line 5, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.latest-blog-area .area-heading {
+    margin-bottom: 70px;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_area a {
+    color: #666666 !important;
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 14, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_area a:hover,
+.blog_area a :hover {
+    background: -webkit-linear-gradient(131deg, #f57d00 0%, #f57d00 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* line 28, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog:hover {
+    box-shadow: 0px 10px 20px 0px rgba(42, 34, 123, 0.1);
+}
+
+/* line 32, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .thumb {
+    overflow: hidden;
+    position: relative;
+}
+
+/* line 36, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .thumb:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 49, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog h4 {
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 34px;
+    margin-bottom: 25px;
+}
+
+/* line 56, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* line 66, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .date {
+    color: #666666;
+    text-align: left;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/* line 74, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .tag {
+    text-align: left;
+    display: inline-block;
+    float: left;
+    font-size: 13px;
+    font-weight: 300;
+    margin-right: 22px;
+    position: relative;
+}
+
+/* line 84, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .tag:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background: #acacac;
+    right: -12px;
+    top: 7px;
+}
+
+@media (max-width: 1199px) {
+    /* line 74, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog .tag {
+        margin-right: 8px;
+    }
+    /* line 98, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog .tag:after {
+        display: none;
+    }
+}
+
+/* line 104, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .likes {
+    margin-right: 16px;
+}
+
+@media (max-width: 800px) {
+    /* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog {
+        margin-bottom: 30px;
+    }
+}
+
+/* line 112, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .single-blog-content {
+    padding: 30px;
+}
+
+/* line 116, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .single-blog-content .meta-bottom p {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/* line 121, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog .single-blog-content .meta-bottom i {
+    color: #fdcb9e;
+    font-size: 13px;
+    margin-right: 7px;
+}
+
+@media (max-width: 1199px) {
+    /* line 112, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog .single-blog-content {
+        padding: 15px;
+    }
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-blog:hover .thumb:after {
+    opacity: 0.7;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+@media (max-width: 1199px) {
+    /* line 143, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog h4 {
+        transition: all 300ms linear 0s;
+        border-bottom: 1px solid #dfdfdf;
+        padding-bottom: 14px;
+        margin-bottom: 12px;
+    }
+    /* line 149, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-blog h4 a {
+        font-size: 18px;
+    }
+}
+
+/* line 157, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog {
+    position: relative;
+}
+
+/* line 160, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog .single-blog-content {
+    position: absolute;
+    left: 35px;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+    /* line 160, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .full_image.single-blog .single-blog-content {
+        bottom: 100px;
+    }
+}
+
+/* line 179, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog h4 {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-bottom: none;
+    padding-bottom: 5px;
+}
+
+/* line 185, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* line 195, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog .date {
+    color: #fff;
+}
+
+/* line 200, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.full_image.single-blog:hover .single-blog-content {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* End Blog Area css
+============================================================================================ */
+
+/* Latest Blog Area css
+============================================================================================ */
+
+/* line 224, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.l_blog_item .l_blog_text .date {
+    margin-top: 24px;
+    margin-bottom: 15px;
+}
+
+/* line 228, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.l_blog_item .l_blog_text .date a {
+    font-size: 12px;
+}
+
+/* line 234, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.l_blog_item .l_blog_text h4 {
+    font-size: 18px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 247, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.l_blog_item .l_blog_text p {
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+
+/* End Latest Blog Area css
+============================================================================================ */
+
+/* Causes Area css
+============================================================================================ */
+
+/* line 263, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_slider .owl-dots {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* line 267, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_slider .owl-dots .owl-dot {
+    height: 14px;
+    width: 14px;
+    background: #eeeeee;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+/* line 274, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_slider .owl-dots .owl-dot:last-child {
+    margin-right: 0px;
+}
+
+/* line 285, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item {
+    background: #fff;
+}
+
+/* line 288, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_img {
+    position: relative;
+}
+
+/* line 291, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_img .c_parcent {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 299, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_img .c_parcent span {
+    width: 70%;
+    height: 3px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+/* line 307, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_img .c_parcent span:before {
+    content: "75%";
+    position: absolute;
+    right: -10px;
+    bottom: 0px;
+    color: #fff;
+    padding: 0px 5px;
+}
+
+/* line 320, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_text {
+    padding: 30px 35px 40px 30px;
+}
+
+/* line 323, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* line 336, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_text p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+/* line 346, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_bottom a {
+    width: 50%;
+    border: 1px solid;
+    text-align: center;
+    float: left;
+    line-height: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* line 358, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.causes_item .causes_bottom a + a {
+    border-color: #eeeeee;
+    background: #fff;
+    font-size: 14px;
+}
+
+/* End Causes Area css
+============================================================================================ */
+
+/*================= latest_blog_area css =============*/
+
+/* line 374, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.latest_blog_area {
+    background: #f9f9ff;
+}
+
+/* line 378, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post {
+    margin-bottom: 30px;
+}
+
+/* line 381, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post .thumb {
+    overflow: hidden;
+}
+
+/* line 384, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post .thumb img {
+    transition: all 0.7s linear;
+}
+
+/* line 389, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post .details {
+    padding-top: 30px;
+}
+
+/* line 392, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post .details .sec_h4 {
+    line-height: 24px;
+    padding: 10px 0px 13px;
+    transition: all 0.3s linear;
+}
+
+/* line 403, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post .date {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* line 410, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-recent-blog-post:hover img {
+    transform: scale(1.23) rotate(10deg);
+}
+
+/* line 417, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.tags .tag_btn {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    border: 1px solid #eeeeee;
+    display: inline-block;
+    padding: 1px 18px;
+    text-align: center;
+}
+
+/* line 431, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.tags .tag_btn + .tag_btn {
+    margin-left: 2px;
+}
+
+/*========= blog_categorie_area css ===========*/
+
+/* line 438, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_categorie_area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 900px) {
+    /* line 438, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_categorie_area {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (min-width: 1100px) {
+    /* line 438, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_categorie_area {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
+/* line 454, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* line 459, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post img {
+    max-width: 100%;
+}
+
+/* line 463, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post .categories_details {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(34, 34, 34, 0.75);
+    color: #fff;
+    transition: all 0.3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* line 476, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post .categories_details h5 {
+    margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+}
+
+/* line 494, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post .categories_details p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 0px;
+}
+
+/* line 501, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post .categories_details .border_line {
+    margin: 10px 0px;
+    background: #fff;
+    width: 100%;
+    height: 1px;
+}
+
+/* line 510, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.categories_post:hover .categories_details {
+    background: rgba(222, 99, 32, 0.85);
+}
+
+/*============ blog_left_sidebar css ==============*/
+
+/* line 525, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_item {
+    margin-bottom: 50px;
+}
+
+/* line 529, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_details {
+    padding: 30px 0 20px 10px;
+    box-shadow: 0px 10px 20px 0px rgba(221, 221, 221, 0.3);
+}
+
+@media (min-width: 768px) {
+    /* line 529, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_details {
+        padding: 60px 30px 35px 35px;
+    }
+}
+
+/* line 537, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_details p {
+    margin-bottom: 30px;
+}
+
+/* line 541, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_details a {
+    color: #ff8b23;
+}
+
+/* line 544, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_details a:hover {
+    color: #f57d00;
+}
+
+/* line 549, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_details h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+    /* line 549, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_details h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+}
+
+/* line 563, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link li {
+    float: left;
+    font-size: 14px;
+}
+
+/* line 567, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link li a {
+    color: #999999;
+}
+
+/* line 571, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link li i,
+.blog-info-link li span {
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+/* line 577, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link li::after {
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* line 583, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link li:last-child::after {
+    display: none;
+}
+
+/* line 588, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-info-link::after {
+    content: "";
+    display: block;
+    clear: both;
+    display: table;
+}
+
+/* line 596, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_item_img {
+    position: relative;
+}
+
+/* line 599, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_item_img .blog_item_date {
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    display: block;
+    color: #fff;
+    background-color: #f57d00;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    /* line 599, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_item_img .blog_item_date {
+        bottom: -20px;
+        left: 40px;
+        padding: 13px 30px;
+    }
+}
+
+/* line 615, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_item_img .blog_item_date h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    /* line 615, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_item_img .blog_item_date h3 {
+        font-size: 30px;
+    }
+}
+
+/* line 627, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_item_img .blog_item_date p {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    /* line 627, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .blog_item_img .blog_item_date p {
+        font-size: 18px;
+    }
+}
+
+/* line 647, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .widget_title {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* line 652, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .widget_title::after {
+    content: "";
+    display: block;
+    padding-top: 15px;
+    border-bottom: 1px solid #f0e9ff;
+}
+
+/* line 660, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .single_sidebar_widget {
+    background: #fbf9ff;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* line 664, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .single_sidebar_widget .btn_1 {
+    margin-top: 0px;
+}
+
+/* line 672, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .search_widget .form-control {
+    height: 50px;
+    border-color: #f0e9ff;
+    font-size: 13px;
+    color: #999999;
+    padding-left: 20px;
+    border-radius: 0;
+    border-right: 0;
+}
+
+/* line 681, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .search_widget .form-control::placeholder {
+    color: #999999;
+}
+
+/* line 685, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .search_widget .form-control:focus {
+    border-color: #f0e9ff;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* line 694, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .search_widget .input-group button {
+    background: #fff;
+    border-left: 0;
+    border: 1px solid #f0e9ff;
+    padding: 4px 15px;
+    border-left: 0;
+}
+
+/* line 701, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .search_widget .input-group button i,
+.blog_right_sidebar .search_widget .input-group button span {
+    font-size: 14px;
+    color: #999999;
+}
+
+/* line 713, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .newsletter_widget .form-control {
+    height: 50px;
+    border-color: #f0e9ff;
+    font-size: 13px;
+    color: #999999;
+    padding-left: 20px;
+    border-radius: 0;
+}
+
+/* line 722, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .newsletter_widget .form-control::placeholder {
+    color: #999999;
+}
+
+/* line 726, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .newsletter_widget .form-control:focus {
+    border-color: #f0e9ff;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* line 735, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .newsletter_widget .input-group button {
+    background: #fff;
+    border-left: 0;
+    border: 1px solid #f0e9ff;
+    padding: 4px 15px;
+    border-left: 0;
+}
+
+/* line 742, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .newsletter_widget .input-group button i,
+.blog_right_sidebar .newsletter_widget .input-group button span {
+    font-size: 14px;
+    color: #999999;
+}
+
+/* line 755, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .post_category_widget .cat-list li {
+    border-bottom: 1px solid #f0e9ff;
+    transition: all 0.3s ease 0s;
+    padding-bottom: 12px;
+}
+
+/* line 760, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .post_category_widget .cat-list li:last-child {
+    border-bottom: 0;
+}
+
+/* line 764, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .post_category_widget .cat-list li a {
+    font-size: 14px;
+    line-height: 20px;
+    color: #888888;
+}
+
+/* line 769, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .post_category_widget .cat-list li a p {
+    margin-bottom: 0px;
+}
+
+/* line 774, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .post_category_widget .cat-list li + li {
+    padding-top: 15px;
+}
+
+/* line 791, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .popular_post_widget .post_item .media-body {
+    justify-content: center;
+    align-self: center;
+    padding-left: 20px;
+}
+
+/* line 796, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .popular_post_widget .post_item .media-body h3 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 6px;
+    transition: all 0.3s linear;
+}
+
+/* line 807, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .popular_post_widget .post_item .media-body a:hover {
+    color: #fff;
+}
+
+/* line 813, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .popular_post_widget .post_item .media-body p {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 0px;
+}
+
+/* line 820, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .popular_post_widget .post_item + .post_item {
+    margin-top: 20px;
+}
+
+/* line 828, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .tag_cloud_widget ul li {
+    display: inline-block;
+}
+
+/* line 831, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .tag_cloud_widget ul li a {
+    display: inline-block;
+    border: 1px solid #eeeeee;
+    background: #fff;
+    padding: 4px 20px;
+    margin-bottom: 8px;
+    margin-right: 3px;
+    transition: all 0.3s ease 0s;
+    color: #888888;
+    font-size: 13px;
+}
+
+/* line 842, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .tag_cloud_widget ul li a:hover {
+    background: #009dff;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 857, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .instagram_feeds .instagram_row {
+    display: flex;
+    margin-right: -6px;
+    margin-left: -6px;
+}
+
+/* line 863, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .instagram_feeds .instagram_row li {
+    width: 33.33%;
+    float: left;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-bottom: 15px;
+}
+
+/* line 963, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog_right_sidebar .br {
+    width: 100%;
+    height: 1px;
+    background: #eeeeee;
+    margin: 30px 0px;
+}
+
+/* line 984, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-pagination {
+    margin-top: 80px;
+}
+
+/* line 988, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-pagination .page-link {
+    font-size: 14px;
+    position: relative;
+    display: block;
+    padding: 0;
+    text-align: center;
+    margin-left: -1px;
+    line-height: 45px;
+    width: 45px;
+    height: 45px;
+    border-radius: 0 !important;
+    color: #8a8a8a;
+    border: 1px solid #f0e9ff;
+    margin-right: 10px;
+}
+
+/* line 1005, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-pagination .page-link i,
+.blog-pagination .page-link span {
+    font-size: 13px;
+}
+
+/* line 1017, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-pagination .page-item.active .page-link {
+    background-color: #fbf9ff;
+    border-color: #f0e9ff;
+    color: #888888;
+}
+
+/* line 1024, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.blog-pagination .page-item:last-child .page-link {
+    margin-right: 0;
+}
+
+/*============ Start Blog Single Styles  =============*/
+
+/* line 1049, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog_details {
+    box-shadow: none;
+    padding: 0;
+}
+
+/* line 1054, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .social-links {
+    padding-top: 10px;
+}
+
+/* line 1057, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .social-links li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* line 1061, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .social-links li a {
+    color: #cccccc;
+    padding: 7px;
+    font-size: 14px;
+    transition: all 0.2s linear;
+}
+
+/* line 1074, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog_details {
+    padding-top: 26px;
+}
+
+/* line 1077, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog_details p {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* line 1087, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .quote-wrapper {
+    background: rgba(130, 139, 178, 0.1);
+    padding: 15px;
+    line-height: 1.733;
+    color: #888888;
+    font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+    /* line 1087, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .quote-wrapper {
+        padding: 30px;
+    }
+}
+
+/* line 1101, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .quotes {
+    background: #fff;
+    padding: 15px 15px 15px 20px;
+    border-left: 2px solid;
+}
+
+@media (min-width: 768px) {
+    /* line 1101, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .quotes {
+        padding: 25px 25px 25px 30px;
+    }
+}
+
+/* line 1111, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .arrow {
+    position: absolute;
+}
+
+/* line 1114, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .arrow .lnr {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* line 1121, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .thumb .overlay-bg {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* line 1126, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top {
+    padding-top: 15px;
+    border-top: 1px solid #f0e9ff;
+}
+
+/* line 1130, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top p {
+    margin-bottom: 0;
+}
+
+/* line 1134, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .like-info {
+    font-size: 14px;
+}
+
+/* line 1137, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .like-info i,
+.single-post-area .navigation-top .like-info span {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* line 1144, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .comment-count {
+    font-size: 14px;
+}
+
+/* line 1147, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .comment-count i,
+.single-post-area .navigation-top .comment-count span {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* line 1156, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .social-icons li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* line 1160, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .social-icons li:last-child {
+    margin: 0;
+}
+
+/* line 1164, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-top .social-icons li i,
+.single-post-area .navigation-top .social-icons li span {
+    font-size: 14px;
+    color: #999999;
+}
+
+/* line 1182, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author {
+    padding: 40px 30px;
+    background: #fbf9ff;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    /* line 1182, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .blog-author {
+        padding: 20px 8px;
+    }
+}
+
+/* line 1191, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+@media (max-width: 600px) {
+    /* line 1191, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .blog-author img {
+        margin-right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* line 1204, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author a {
+    display: inline-block;
+}
+
+/* line 1208, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author a:hover {
+    color: #009dff;
+}
+
+/* line 1213, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* line 1218, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .blog-author h4 {
+    font-size: 16px;
+}
+
+/* line 1225, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+    margin-top: 55px;
+}
+
+/* line 1230, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area p {
+    margin-bottom: 0px;
+}
+
+/* line 1234, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area h4 {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+/* line 1240, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left {
+    text-align: left;
+}
+
+/* line 1243, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left .thumb {
+    margin-right: 20px;
+    background: #000;
+}
+
+/* line 1247, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left .thumb img {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 1252, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left .lnr {
+    margin-left: 20px;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 1259, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left:hover .lnr {
+    opacity: 1;
+}
+
+/* line 1264, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-left:hover .thumb img {
+    opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+    /* line 1240, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .navigation-area .nav-left {
+        margin-bottom: 30px;
+    }
+}
+
+/* line 1275, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right {
+    text-align: right;
+}
+
+/* line 1278, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right .thumb {
+    margin-left: 20px;
+    background: #000;
+}
+
+/* line 1282, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right .thumb img {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 1287, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right .lnr {
+    margin-right: 20px;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* line 1294, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right:hover .lnr {
+    opacity: 1;
+}
+
+/* line 1299, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.single-post-area .navigation-area .nav-right:hover .thumb img {
+    opacity: 0.5;
+}
+
+@media (max-width: 991px) {
+    /* line 1307, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .single-post-area .sidebar-widgets {
+        padding-bottom: 0px;
+    }
+}
+
+/* line 1314, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area {
+    background: transparent;
+    border-top: 1px solid #eee;
+    padding: 45px 0;
+    margin-top: 50px;
+}
+
+@media (max-width: 414px) {
+    /* line 1314, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comments-area {
+        padding: 50px 8px;
+    }
+}
+
+/* line 1325, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area h4 {
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+/* line 1332, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area h5 {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+/* line 1341, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .comment-list {
+    padding-bottom: 48px;
+}
+
+/* line 1344, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .comment-list:last-child {
+    padding-bottom: 0px;
+}
+
+/* line 1348, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .comment-list.left-padding {
+    padding-left: 25px;
+}
+
+@media (max-width: 413px) {
+    /* line 1354, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comments-area .comment-list .single-comment h5 {
+        font-size: 12px;
+    }
+    /* line 1358, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comments-area .comment-list .single-comment .date {
+        font-size: 11px;
+    }
+    /* line 1362, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comments-area .comment-list .single-comment .comment {
+        font-size: 10px;
+    }
+}
+
+/* line 1369, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .thumb {
+    margin-right: 20px;
+}
+
+/* line 1372, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .thumb img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+/* line 1378, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .date {
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+/* line 1385, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .comment {
+    margin-bottom: 10px;
+    color: #777777;
+    font-size: 15px;
+}
+
+/* line 1391, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comments-area .btn-reply {
+    background-color: transparent;
+    color: #888888;
+    padding: 5px 18px;
+    font-size: 14px;
+    display: block;
+    font-weight: 400;
+}
+
+/* line 1408, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form {
+    border-top: 1px solid #eee;
+    padding-top: 45px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* line 1416, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .form-group {
+    margin-bottom: 30px;
+}
+
+/* line 1420, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form h4 {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* line 1428, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .name {
+    padding-left: 0px;
+}
+
+@media (max-width: 767px) {
+    /* line 1428, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comment-form .name {
+        padding-right: 0px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* line 1437, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .email {
+    padding-right: 0px;
+}
+
+@media (max-width: 991px) {
+    /* line 1437, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+    .comment-form .email {
+        padding-left: 0px;
+    }
+}
+
+/* line 1445, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .form-control {
+    border: 1px solid #f0e9ff;
+    border-radius: 5px;
+    height: 48px;
+    padding-left: 18px;
+    font-size: 13px;
+    background: transparent;
+}
+
+/* line 1453, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .form-control:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+/* line 1458, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .form-control::placeholder {
+    font-weight: 300;
+    color: #999999;
+}
+
+/* line 1463, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form .form-control::placeholder {
+    color: #777777;
+}
+
+/* line 1468, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form textarea {
+    padding-top: 18px;
+    border-radius: 12px;
+    height: 100% !important;
+}
+
+/* line 1474, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 13px;
+    color: #777;
+}
+
+/* line 1480, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 13px;
+    color: #777;
+}
+
+/* line 1486, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form :-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 13px;
+    color: #777;
+}
+
+/* line 1492, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog.scss */
+
+.comment-form :-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 13px;
+    color: #777;
+}
+
+/*============ End Blog Single Styles  =============*/
+
+/**************** blog part css start ****************/
+
+/* line 2, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part {
+    margin-bottom: 140px;
+}
+
+@media (max-width: 576px) {
+    /* line 2, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part {
+        margin-bottom: 0px;
+        padding: 0px 0px 70px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 2, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part {
+        margin-bottom: 0px;
+        padding: 0px 0px 70px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 2, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part {
+        margin-bottom: 0px;
+        padding: 0px 0px 70px;
+    }
+}
+
+/* line 19, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .blog_right_sidebar .widget_title {
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-style: inherit !important;
+}
+
+@media (max-width: 576px) {
+    /* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog {
+        margin-bottom: 140px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog {
+        margin-bottom: 140px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog {
+        margin-bottom: 140px;
+        margin-top: 20px;
+    }
+}
+
+/* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card-img-top {
+    border-radius: 0px;
+}
+
+/* line 43, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card {
+    border: 0px solid transparent;
+    border-radius: 0px;
+    background-color: transparent;
+    position: relative;
+}
+
+/* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card .card-body {
+    padding: 25px 10px 29px 40px;
+    background-color: #fff;
+    position: absolute;
+    left: 20px;
+    bottom: -140px;
+    box-shadow: -7.552px 9.326px 20px 0px rgba(1, 84, 85, 0.1);
+    border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+    /* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card .card-body {
+        padding: 15px;
+        left: 10px;
+        bottom: -140px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card .card-body {
+        padding: 15px;
+        left: 10px;
+        bottom: -140px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card .card-body {
+        padding: 20px;
+    }
+}
+
+/* line 72, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card .card-body a {
+    color: #f57d00;
+    text-transform: uppercase;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+}
+
+/* line 76, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card .card-body a:hover {
+    background: -webkit-linear-gradient(131deg, #ff7e5f 0%, #feb47b 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* line 83, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card .dot {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* line 86, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card .dot:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 5px;
+    left: 0;
+    background-color: #f57d00;
+    border-radius: 50%;
+}
+
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card span {
+    color: #8a8a8a;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+    /* line 97, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card span {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 97, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card span {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 97, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card span {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* line 97, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card span {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+/* line 119, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card h5 {
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 20px;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    text-transform: capitalize;
+    margin-bottom: 22px;
+}
+
+@media (max-width: 576px) {
+    /* line 119, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card h5 {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 119, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card h5 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 119, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card h5 {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* line 119, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card h5 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+}
+
+/* line 140, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card h5:hover {
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    background: -webkit-linear-gradient(131deg, #feb47b 0%, #ff7e5f 99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: 1s;
+}
+
+/* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card ul li {
+    display: inline-block;
+    color: #8a8a8a;
+    margin-right: 14px;
+}
+
+@media (max-width: 576px) {
+    /* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card ul li {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card ul li {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card ul li {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+    .blog_part .single-home-blog .card ul li {
+        margin-right: 10px;
+    }
+}
+
+/* line 166, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_blog_part.scss */
+
+.blog_part .single-home-blog .card ul li span {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* line 379, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-datepicker input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    padding: 17px;
+    font-size: 12px;
+    color: #919191;
+    margin-bottom: 20px;
+}
+
+/* line 388, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-datepicker-md [role="right-icon"] {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 14px;
+    color: #919191;
+    margin-right: 15px;
+    top: 16px;
+}
+
+/* line 397, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-picker-md {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.content-all {
+    width: 210px;
+    margin: auto;
+    perspective: 800px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.content-carrousel {
+    width: 100%;
+    position: absolute;
+    animation: rotar 100s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.content-carrousel:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.content-carrousel figure {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px rgb(245, 244, 244);
+    transition: all 3000ms;
+}
+
+.content-carrousel figure:hover {
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    transition: all 3000ms;
+}
+
+.content-carrousel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(10) {
+    transform: rotateY(360deg) translateZ(300px);
+}
+
+.content-carrousel img {
+    width: 100%;
+    transition: all 3000ms;
+}
+
+.content-carrousel img:hover {
+    transform: scale(1.2);
+    transition: all 3000ms;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.popup_box {
+    background: #fff;
+    display: inline-block;
+    z-index: 9;
+    width: 500px;
+    padding: 60px 40px;
+}
+
+/* line 54, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #f57d00;
+    margin-bottom: 46px;
+}
+
+/* line 54, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+/* line 60, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box .boxed-btn3 {
+    width: 100%;
+    text-transform: capitalize;
+}
+
+/* line 64, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(121, 121, 121);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* line 70, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box input::placeholder {
+    color: #666666;
+    font-weight: 400;
+}
+
+/* line 74, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box input:focus {
+    outline: none;
+}
+
+/* line 78, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box .nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    /* border-radius: 5px; */
+    border: solid 1px #e2e2e2;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    width: 100% !important;
+    /* height: 42px; */
+    line-height: 50px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+    border-radius: 0;
+    margin-bottom: 30px;
+    height: 50px !important;
+    font-size: 16px;
+    font-weight: 400;
+    color: #919191;
+}
+
+/* line 112, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box .nice-select::after {
+    content: "\f0d7";
+    display: block;
+    height: 5px;
+    margin-top: -5px;
+    pointer-events: none;
+    position: absolute;
+    right: 17px;
+    top: 3px;
+    transition: all 0.15s ease-in-out;
+    width: 5px;
+    font-family: fontawesome;
+    color: #b8b4b4;
+    font-size: 15px;
+}
+
+/* line 127, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box .nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    height: 100px;
+    overflow-y: scroll;
+}
+
+/* line 136, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+.popup_box .nice-select.list {
+    height: 100px;
+    overflow-y: scroll;
+}
+
+/* line 142, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+#test-form {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* line 150, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+#test-form .mfp-close-btn-in .mfp-close {
+    color: #333;
+    display: none !important;
+}
+
+/* line 155, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
+
+#test-form button.mfp-close {
+    display: none !important;
+}
+
+/* line 367, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+#test-form .white-popup-block .popup_inner .gj-datepicker span {
+    color: red;
+}
+
+/* line 372, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+#test-form .white-popup-block input {
+    width: 100%;
+    height: 50px;
+}
+
+#test-form .info {
+    width: 100%;
+    background: #fff;
+}
+
+#test-form .info i {
+    font-size: 20px;
+    color: #f57d00;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.test-form .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c4964;
+}
+
+#test-form .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #2c4964;
+}
+
+#test-form .info .email,
+.test-form .info .phone {
+    margin-top: 40px;
+}
+
+#test-form .info .email:hover i,
+.test-form .info .address:hover i,
+.test-form .info .phone:hover i {
+    background: #f57d00;
+    color: #fff;
+}
+
+#test-form .php-email-form {
+    width: 100%;
+    background: #fff;
+}
+
+#test-form .php-email-form .form-group {
+    padding-bottom: 8px;
+}
+
+#test-form {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#test-form .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+#test-form .php-email-form .error-message br + br {
+    margin-top: 25px;
+}
+
+#test-form.php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+#test-form.php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+#test-form .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 2s linear infinite;
+    animation: animate-loading 2s linear infinite;
+}
+
+#test-form .php-email-form input,
+.test-form .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+#test-form .php-email-form input {
+    height: 44px;
+}
+
+#test-form.php-email-form textarea {
+    padding: 10px 12px;
+}
+
+#test-form.php-email-form button[type="submit"] {
+    background: #f57d00;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+#test-form .php-email-form button[type="submit"]:hover {
+    background: #fff;
+    color: #f57d00;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* line 379, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-datepicker input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(221, 57, 16);
+    padding: 17px;
+    font-size: 12px;
+    color: #da1010;
+    margin-bottom: 20px;
+}
+
+/* line 388, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-datepicker-md [role="right-icon"] {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 14px;
+    color: #25a80b;
+    margin-right: 15px;
+    top: 16px;
+}
+
+/* line 397, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_offers.scss */
+
+.gj-picker-md {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Galeria de fotos paceintes  */
+
+.galeria {
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria li {
+    margin: 5px;
+}
+
+.galeria img {
+    width: 150px;
+    height: 100px;
+}
+
+/*Estilos del modal*/
+
+.modal {
+    display: none;
+}
+
+.modal:target {
+    display: block;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal h3 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.imagen {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.imagen a:nth-child(2) {
+    margin: 0;
+    height: 100%;
+    flex-shrink: 2;
+}
+
+.imagen img {
+    width: 500px;
+    height: 100%;
+    max-width: 100%;
+    border: 7px solid #fff;
+    box-sizing: border-box;
+}
+
+.cerrar {
+    display: block;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    margin: 15px auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    padding: 5px;
+    border-radius: 50%;
+    line-height: 25px;
+}
+
+.navegacion {
+    width: 100%;
+    margin: 30px auto;
+    background: #a0a0a0;
+}
+
+.navegacion ul {
+    list-style: none;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a {
+    display: flex;
+    padding: 10px 10px;
+    color: #ffffff;
+    font-family: "Open sans";
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #f57d00;
+    transition: all 0.3s;
+    border-radius: 80%;
+}
+
+.menu li a:active {
+    color: #f57d00;
+    transition: all 0.3s;
+    border-radius: 80%;
+}
+
+.btn-get-started {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #f57d00;
+    border-color: #f57d00;
+}
+
+.btn-get-started:hover {
+    color: #f57d00;
+    background: #fff;
+    border-color: #f57d00;
+}
+
+.business_expert_area {
+    padding-bottom: 0%;
+}
+
+@media (max-width: 767px) {
+    /* line 111, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+    .business_expert_area {
+        padding-bottom: 50px;
+    }
+}
+
+/* line 118, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_info .icon i {
+    background: #f57d00;
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 50%;
+}
+
+.business_expert_area .business_info .icon2 i {
+    background: #f57d00;
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 50%;
+}
+
+/* line 130, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_info h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-top: 16px;
+    margin-bottom: 14px;
+}
+
+/* line 137, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_info p {
+    color: #737373;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    /* line 143, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+    .business_expert_area .business_thumb {
+        padding-top: 20px;
+    }
+}
+
+/* line 147, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_thumb img {
+    width: 100%;
+    border-radius: 45px;
+}
+
+/* line 151, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_tabs_area {
+    background: #ece9e5;
+    border-radius: 1%;
+}
+
+/* line 154, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_tabs_area .nav .nav-item {
+    width: 25%;
+}
+
+@media (max-width: 767px) {
+    /* line 154, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+    .business_expert_area .business_tabs_area .nav .nav-item {
+        width: 100%;
+    }
+}
+
+/* line 159, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_tabs_area .nav .nav-item a {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1f1f1f;
+    padding: 30px 2px 10px 40px;
+}
+
+@media (max-width: 767px) {
+    /* line 159, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+    .business_expert_area .business_tabs_area .nav .nav-item a {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 159, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+    .business_expert_area .business_tabs_area .nav .nav-item a {
+        padding: 20px;
+        font-size: 15px;
+        justify-content: space-evenly;
+    }
+}
+
+/* line 171, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_tabs_area .nav .nav-item a.active {
+    background: #fff;
+    border-radius: 25px;
+}
+
+/* line 177, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.business_expert_area .business_tabs_area #myTab {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+/* line 185, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
+
+.border_bottom {
+    border-bottom: 1px solid #f57d00;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.fin {
+    color: #737373;
+}
+
+.fin:hover {
+    color: #f57d00;
+}
+
+.modal-header {
+    background-color: #f57d00;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-title {
+    color: #fff;
+    text-align: center;
+}
+
+.modal-title .h4 {
+    color: #fff;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    border-radius: 15px;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #f57d00;
+    border-radius: 16px;
+    border: 1px solid #fff;
+}
+
+.feature-3-content {
+    height: 400px;
+    height: 400px;
+    border-radius: 40px;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #f57d00;
+    border-radius: 16px;
+    border: 1px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #f9f9ff;
+    color: #f57d00;
+    border-color: #f57d00;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.cargauno {
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #666;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.carga_tittle {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    color: #737373;
+}
+
+.iframe {
+    position: absolute;
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+}
+/* ----------------------------------------------DASHBOARD STYLES--------------------------------------------------- */
+.dirty-dash {
+}
+
+.prueba {
+    background-color: #f57d00;
+}
+.gal {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: 1%;
+}
+.btn-outline-danger {
+    background-color: transparent;
+    border-radius: 80%;
+    border-color: transparent;
+    margin-left: 35%;
+}
+.bi-trash {
+    color: black;
+    width: -150px;
+}
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/*
+*
+* Contexts
+*/
+
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li,
+ol li {
+    display: block;
+}
+
+dl {
+    margin: 0;
+}
+
+dt,
+dd {
+    line-height: inherit;
+}
+
+dt {
+    font-weight: inherit;
+}
+
+dd {
+    margin-bottom: 0;
+}
+
+cite {
+    font-style: normal;
+}
+
+form {
+    margin-bottom: 0;
+}
+
+blockquote {
+    padding-left: 0;
+    border-left: 0;
+}
+
+address {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+html p a:hover {
+    text-decoration: none;
+}
+
+/*
+*
+* Typography
+*/
+
+/*
+*
+* Brand
+*/
+
+/*
+*
+* Links
+*/
+
+/*
+*
+* Boxes
+*/
+
+/*
+* Element groups
+*/
+
+/*
+*
+* Responsive units
+*/
+
+/*
+*
+* Lists
+*/
+
+/*
+*
+* Images
+*/
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.img-circles {
+    border-radius: 50%;
+}
+
+.figure-classic {
+    position: relative;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.figure-classic::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid #363636;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.figure-classic img {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.figure-classic-left {
+    margin-left: 16px;
+}
+
+.figure-classic-left::before {
+    transform: translate3d(-16px, -16px, 0);
+}
+
+.figure-classic-right {
+    margin-right: 16px;
+}
+
+.figure-classic-right::before {
+    transform: translate3d(16px, -16px, 0);
+}
+
+@media (min-width: 992px) {
+    .desktop .figure-classic:hover::before {
+        transform: none;
+    }
+    .desktop .figure-classic-left:hover img {
+        transform: translate3d(-16px, -16px, 0);
+    }
+    .desktop .figure-classic-right:hover img {
+        transform: translate3d(16px, -16px, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .figure-classic {
+        margin-top: 22px;
+    }
+    .figure-classic-left {
+        margin-left: 22px;
+    }
+    .figure-classic-left::before {
+        transform: translate3d(-22px, -22px, 0);
+    }
+    .figure-classic-right {
+        margin-right: 22px;
+    }
+    .figure-classic-right::before {
+        transform: translate3d(22px, -22px, 0);
+    }
+}
+
+@media (min-width: 768px) and (min-width: 992px) {
+    .desktop .figure-classic-left:hover img {
+        transform: translate3d(-22px, -22px, 0);
+    }
+    .desktop .figure-classic-right:hover img {
+        transform: translate3d(22px, -22px, 0);
+    }
+}
+
+/*
+*
+* Icons
+*/
+
+/*
+*
+* Buttons
+*/
+
+/*
+*
+* Thumbnails
+*/
+
+/*
+*
+* Team
+*/
+.team-classic {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-classic-2 .team-classic-status {
+    color: #f57d00;
+}
+
+.team-classic-figure {
+    display: block;
+}
+
+.team-classic-caption {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    bottom: 27px;
+    width: 80%;
+    min-width: 300px;
+    margin-left: -25px;
+    padding: 15px 20px 15px 50px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.team-classic-caption::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.5);
+    transform: skew(10deg);
+    transform-origin: 50% 100%;
+    z-index: -1;
+}
+
+.team-classic-name {
+    color: #ffffff;
+}
+
+.team-classic-name a,
+.team-classic-name a:focus,
+.team-classic-name a:active {
+    color: inherit;
+}
+
+.team-classic-name a:hover {
+    color: #f57d00;
+}
+
+.team-classic-status {
+    line-height: 1.5;
+    color: #f57d00;
+    letter-spacing: 0.025em;
+}
+
+* + .team-classic-status {
+    margin-top: 0;
+}
+
+@media (min-width: 576px) {
+    .team-classic-lg {
+        max-width: 420px;
+    }
+    .team-classic-lg .team-classic-caption {
+        bottom: 44px;
+        margin-left: -30px;
+        padding: 15px 20px 15px 85px;
+    }
+}
+
+@media (min-width: 992px) {
+    .desktop .team-classic:hover .team-classic-figure img {
+        filter: grayscale(0);
+    }
+    .desktop .team-classic:hover .team-classic-caption {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .team-classic-lg .team-classic-caption {
+        bottom: 10%;
+        padding: 15px 6% 15px 18%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .team-classic-lg .team-classic-caption {
+        min-width: 260px;
+    }
+}
+
+.post-classic {
+    width: 346px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.post-classic:hover::before {
+    left: -18px;
+    right: -18px;
+}
+
+.post-classic::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 7px solid #f57d00;
+    top: -22px;
+    left: 20px;
+    right: 20px;
+    bottom: -22px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-classic-figure img {
+    width: 100%;
+}
+
+.post-classic-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -ms-flex-pack: center;
+    align-items: center;
+    padding: 0 30px 59px;
+    background-color: #fff;
+    text-align: center;
+    border: solid 1px;
+}
+
+.post-classic-time {
+    background-color: #f57d00;
+    padding: 4px 47px;
+    border-radius: 10em;
+    transform: translate(0, -50%);
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+}
+
+.post-classic-title {
+    margin-top: 11px;
+    color: #151515;
+    letter-spacing: 0.025em;
+    width: 100%;
+}
+.post-img-news {
+    display: inline-block;
+    max-width: 100%;
+    height: 150px;
+}
+.post-classic-link {
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    position: relative;
+    text-decoration: underline;
+    color: #151515;
+    margin-top: 25px;
+    padding-top: 32px;
+}
+
+.post-classic-link:hover {
+    color: #f57d00;
+    text-decoration: underline;
+}
+
+.post-classic-link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 1px;
+    width: 145px;
+    background-color: #e1e1e1;
+}
+
+.single-post * + p {
+    margin-top: 38px;
+}
+
+img + .custom-title {
+    margin-top: 36px;
+}
+
+* + .single-post-footer {
+    margin-top: 33px;
+}
+
+.single-post-footer {
+    padding: 20px;
+    background-color: #333e61;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .single-post-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.single-post-footer a {
+    color: #ffffff;
+}
+
+.single-post-footer a:hover {
+    color: #4ac4cf;
+}
+
+.single-post-share {
+    display: flex;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .single-post-share {
+        margin-top: 0;
+    }
+}
+
+.single-post-share p {
+    margin-right: 26px;
+    letter-spacing: 0;
+}
+
+.single-post-social-list {
+    margin-bottom: -16px;
+    margin-left: -16px;
+}
+
+.single-post-social-list:empty {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.single-post-social-list > * {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+
+.single-post-social-list .icon {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.single-post-social-list .icon:hover {
+    color: #4ac4cf;
+}
+
+* + .single-post-title {
+    margin-top: 50px;
+}
+
+@media (min-width: 992px) {
+    * + .single-post-title {
+        margin-top: 93px;
+    }
+}
+
+.single-post-title {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+.post-related {
+    text-align: center;
+}
+
+.post-related-figure {
+    overflow: hidden;
+}
+
+.post-related-figure img {
+    transition: all 0.3s ease-in-out;
+}
+
+.post-related-figure img:hover {
+    transform: scale(1.05) rotate(0.5deg);
+}
+
+.post-related-body {
+    padding: 30px 15px;
+    padding-bottom: 0;
+}
+
+.post-related-title {
+    font-weight: 700;
+}
+
+.post-related-footer {
+    color: #4c5a86;
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.post-related-footer li + li::before {
+    content: "/";
+    margin: 0 9px;
+}
+
+.post-related-footer a {
+    color: inherit;
+}
+
+.post-related-footer a:hover {
+    color: #4ac4cf;
+}
+
+.post-related-mod-2 {
+    max-width: 312px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-related-mod-2 .post-related-figure {
+    position: relative;
+    overflow: visible;
+}
+
+.post-related-mod-2 .post-related-figure img {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    transform: translate(-6px, 0);
+}
+
+.post-related-mod-2 .post-related-figure::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+    transform: translate(6px, 12px);
+}
+
+.post-related-mod-2 .post-related-body {
+    margin-top: 9px;
+}
+
+.post-related-mod-2 .post-related-footer {
+    margin-top: 14px;
+}
+
+.post-related-mod-2:hover .post-related-figure img {
+    transform: translate(0, 0);
+}
+
+.post-related-mod-2:hover .post-related-figure::before {
+    transform: translate(0, 0);
+}
+
+.post-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .post-event::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 8%;
+        left: 1%;
+        right: 1%;
+        bottom: 48%;
+    }
+}
+
+@media (min-width: 768px) and (min-width: 992px) and (max-width: 1199.98px) {
+    .post-event::before {
+        background-image: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 10%,
+                transparent 10%,
+                transparent 90%,
+                rgba(255, 255, 255, 0.1) 90%,
+                rgba(255, 255, 255, 0.1) 100%
+            ),
+            linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.1) 6px,
+                rgba(255, 255, 255, 0.1) 13.5%,
+                transparent 13.5%,
+                transparent 86.5%,
+                rgba(255, 255, 255, 0.1) 86.5%,
+                rgba(255, 255, 255, 0.1) 100%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 100%,
+                transparent 100%,
+                transparent 100%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 100%,
+                transparent 100%,
+                transparent 100%
+            );
+        background-size: 100% 6px, 98.6% 6px, 6px 100%, 6px 100%;
+        background-position: 0 0, 6px 100%, 0 6px, 100% 6px;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 768px) and (min-width: 1200px) {
+    .post-event::before {
+        background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 14%,
+                transparent 14%,
+                transparent 86%,
+                rgba(255, 255, 255, 0.1) 86%,
+                rgba(255, 255, 255, 0.1) 100%
+            ),
+            linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.1) 6px,
+                rgba(255, 255, 255, 0.1) 21%,
+                transparent 21%,
+                transparent 79%,
+                rgba(255, 255, 255, 0.1) 79%,
+                rgba(255, 255, 255, 0.1) 100%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 100%,
+                transparent 100%,
+                transparent 100%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.1) 100%,
+                transparent 100%,
+                transparent 100%
+            );
+        background-size: 100% 6px, 98.9% 6px, 6px 100%, 6px 100%;
+        background-position: 0 0, 6px 100%, 0 6px, 100% 6px;
+        background-repeat: no-repeat;
+    }
+}
+
+.post-event .button {
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.post-event .countdown {
+    max-width: none;
+    margin: 0;
+    margin-top: 8px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .post-event .countdown {
+        width: 78%;
+    }
+}
+
+.post-event .countdown-section {
+    width: 33.33%;
+}
+
+.post-event .countdown-section + .countdown-section::before {
+    top: 3%;
+    font-size: 100px;
+}
+
+@media (min-width: 768px) {
+    .post-event .countdown-section + .countdown-section::before {
+        top: 17%;
+        font-size: 88px;
+    }
+}
+
+.post-event .countdown-section .countdown-amount {
+    font-size: 60px;
+}
+
+@media (min-width: 768px) {
+    .post-event .countdown-section .countdown-amount {
+        font-size: 88px;
+    }
+}
+
+.post-event .countdown-section .countdown-period {
+    margin-top: 6px;
+}
+
+.post-event .countdown + img {
+    margin-top: 59px;
+}
+
+.post-event img {
+    position: relative;
+}
+
+.post-modern {
+    position: relative;
+}
+
+.post-modern-content {
+    position: absolute;
+    padding: 15px;
+    left: 0;
+    bottom: 0;
+}
+
+@media (min-width: 576px) {
+    .post-modern-content {
+        padding: 38px;
+    }
+}
+
+.post-modern-title {
+    letter-spacing: 0.025em;
+}
+
+.post-modern-footer {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 1.7;
+}
+
+.post-modern-time {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 6px;
+    margin-right: 19px;
+    color: #ffffff;
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: #4ac4cf;
+    white-space: nowrap;
+}
+
+.post-modern-time::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 6px solid #4ac4cf;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.post-modern-list {
+    text-transform: uppercase;
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-left: -9px;
+}
+
+.post-modern-list > * {
+    margin-left: 9px;
+}
+
+.post-creative {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+    .post-creative-horizont-start {
+        flex-direction: row;
+    }
+    .post-creative-horizont-start .post-creative-figure::before {
+        top: 0;
+        bottom: auto;
+        border: 0;
+        border-top: 38px solid #ffffff;
+        border-left: 38px solid transparent;
+    }
+    .post-creative-horizont-start .post-creative-body {
+        padding-left: 33px;
+        padding-right: 90px;
+        min-height: auto;
+    }
+    .post-creative-horizont-end {
+        flex-direction: row-reverse;
+    }
+    .post-creative-horizont-end .post-creative-figure::before {
+        top: 0;
+        bottom: auto;
+        left: 0;
+        right: auto;
+        border: 0;
+        border-top: 38px solid #ffffff;
+        border-right: 38px solid transparent;
+    }
+    .post-creative-horizont-end .post-creative-body {
+        padding-left: 70px;
+        min-height: auto;
+    }
+}
+
+.post-creative-figure {
+    max-width: 100%;
+    position: relative;
+}
+
+@media (min-width: 1200px) {
+    .post-creative-figure {
+        min-width: 369px;
+    }
+}
+
+.post-creative-figure img {
+    width: 100%;
+}
+
+.post-creative-figure::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-bottom: 38px solid #ffffff;
+    border-left: 38px solid transparent;
+}
+
+.post-creative-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 30px 15px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .post-creative-body {
+        padding: 33px 60px 50px 41px;
+        min-height: 307px;
+    }
+}
+
+.post-creative-time {
+    color: #4c5a86;
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    letter-spacing: 0;
+}
+
+.post-creative-time + .post-creative-title {
+    margin-top: 20px;
+}
+/* ---------------------------------------------------------------ACTIVIDADES PACIENTES---------------------------------------------------------------------------------------- */
+/*
+*
+* Thumbnails
+*/
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail-xxs {
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-xs {
+    max-width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-sm {
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-md {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-lg {
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-xl {
+    max-width: 870px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-classic {
+    text-align: left;
+    overflow: hidden;
+}
+
+.thumbnail-classic-figure {
+    display: block;
+}
+
+.thumbnail-classic-figure img {
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 10px 100px 0 rgba(35, 181, 185, 0.15);
+}
+
+.thumbnail-classic-caption {
+    text-align: center;
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    padding: 10px 15px;
+    min-width: 230px;
+    transform: translate3d(-50%, 0, 0);
+    background: #00000098;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    border: solid 2px rgb(194, 194, 194);
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.thumbnail-classic-caption > [class*="thumbnail-classic-"] {
+    pointer-events: auto;
+}
+
+.thumbnail-classic-title-wrap > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.thumbnail-classic-title-wrap .icon {
+    margin-top: 3px;
+    margin-right: 16px;
+    font-size: 26px;
+}
+.thumbnail-classic-title a,
+.thumbnail-classic-title a:focus,
+.thumbnail-classic-title a:active {
+    color: #f57d00;
+}
+
+.thumbnail-classic-title a:hover {
+    color: #ffff;
+}
+
+.thumbnail-classic-text {
+    display: none;
+}
+
+@media (max-width: 575px) {
+    .thumbnail-custom-mobile {
+        min-height: 300px;
+    }
+    .thumbnail-custom-mobile a {
+        min-height: inherit;
+    }
+    .thumbnail-custom-mobile img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        min-width: 100%;
+        width: auto;
+        height: auto;
+        max-width: none;
+    }
+    @supports (object-fit: cover) {
+        .thumbnail-custom-mobile img {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transform: none;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .desktop .thumbnail-classic-figure img {
+        transform: scale(1.1);
+        will-change: transform;
+    }
+    .desktop .thumbnail-classic-caption {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: inherit;
+        padding: 20px;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(-20px, -20px, 0);
+        will-change: transform;
+    }
+    .desktop .thumbnail-classic-title-wrap .icon {
+        margin-right: 24px;
+        font-size: 36px;
+    }
+    .desktop .thumbnail-classic-text {
+        display: block;
+        font-size: 13px;
+        width: 100%;
+    }
+    .desktop .thumbnail-classic:hover .thumbnail-classic-figure img {
+        transform: none;
+    }
+    .desktop .thumbnail-classic:hover .thumbnail-classic-caption {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .desktop .thumbnail-classic-caption {
+        padding: 30px;
+    }
+    .desktop .thumbnail-classic-text {
+        font-size: inherit;
+    }
+}
+
+@media (min-width: 1800px) {
+    .thumbnail-md .thumbnail-classic-caption {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+* + .thumbnail-classic-text {
+    margin-top: 14px;
+}
+
+.thumbnail-mary {
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.thumbnail-mary::before,
+.thumbnail-mary::after {
+    position: absolute;
+    content: "";
+    transition: inherit;
+    pointer-events: none;
+}
+
+.thumbnail-mary::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 24, 24, 0.45);
+    z-index: 1;
+}
+
+.thumbnail-mary::after {
+    display: inline-block;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.image-new {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}

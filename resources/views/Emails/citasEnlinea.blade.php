@@ -48,13 +48,11 @@
                                                 <tr>
                                                     <td>
                                                         <div>
-                                                            <p> Nombre: {{ $datos['nombre'] }}</p>
+                                                            <p> Nombre: {{ $datos['nombres'] }}</p>
                                                             <p> Correo Electronico: {{ $datos['email'] }}</p>
                                                             <p>Telefono{{ $datos['telefono'] }}</p>
                                                             <p>Direccion: {{ $datos['direccion'] }}</p>
                                                             <p>Eps: {{ $datos['entidad'] }}</p>
-                                                            <p>Fecha: {{ $datos['fecha'] }}</p>
-                                                            <p>Genero: {{ $datos['genero'] }}</p>
                                                             <p>Fecha de nacimiento: {{ $datos['fena'] }}</p>
                                                             <p>Mensaje: {{ $datos['mensaje'] }}</p>
                                                         </div>

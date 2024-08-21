@@ -45,21 +45,18 @@
                                                 <tr>
                                                     <td>
                                                         <div>
-                                                            <p>Fecha: {{ $datos['evaluar1'] }}</p>
-                                                            <p>Nombres: {{ $datos['evaluar3'] }}</p>
-                                                            <p>Correo electronico: {{ $datos['evaluar4'] }}</p>
-                                                            <p>Telefono: {{ $datos['evaluar5'] }}</p>
-                                                            <p>EPS: {{ $datos['evaluar6'] }}</p>
-                                                            <p>Recomendaría a familiares y amigos la unidad renal:
-                                                                {{ $datos['evaluar7'] }}</p>
-                                                            <p>Cómo evalúa la experiencia de los servicios recibidos:
-                                                                {{ $datos['evaluar8'] }}</p>
-                                                            <p>Comentario: {{ $datos['evaluar9'] }}</p>
-                                                            <p>Servicio que desea evaluar: {{ $datos['evaluar10'] }}
+                                                           <p>Asunto: {{ $datos['asunto'] }}</p>
+                                                            <p>Fecha: {{ $datos['dateOfAttention'] }}</p>
+                                                            <p>Nombres: {{ $datos['names'] }}</p>
+                                                            <p>Cedula: {{ $datos['cedula'] }}</p>
+                                                            <p>dirección: {{ $datos['direccion'] }}</p>
+                                                            <p>Correo electronico: {{ $datos['email'] }}</p>
+                                                            <p>Telefono: {{ $datos['telefono'] }}</p>
+                                                            <p>EPS: {{ $datos['entity'] }}</p>
+                                                            <p>Régimen: {{ $datos['regimen'] }}</p>
+                                                            <p>Servicio Recibido: {{ $datos['serviceRecibed'] }}
                                                             </p>
-                                                            <p>conoce usted los derechos y deberes de la unidad renal:
-                                                                {{ $datos['evaluar11'] }}</p>
-                                                            <p>Resumen del comentario: {{ $datos['evaluar12'] }}</p>
+                                                            <p>Resumen del comentario: {{ $datos['summary'] }}</p>
                                                         </div>
                                                     </td>
                                                 </tr>

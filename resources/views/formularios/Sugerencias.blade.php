@@ -30,9 +30,9 @@
                                     siguientes datos:</h6>
                                 <br><br>
                                 <div class="form-group col-md-12">
-                                    <label for="evaluar3">NOMBRE COMPLETO:</label>
+                                    <label for="nombres">NOMBRE COMPLETO:</label>
                                     <input type="text" class="form-control" placeholder="Ejemplo: Andres Felipe Medina"
-                                        required name='evaluar3' id="evaluar3">
+                                        required name='names' id="names">
                                     <div class="invalid-feedback">
                                         *Por favor digite su nombre.
                                     </div>
@@ -42,13 +42,13 @@
                                     <input type="number" class="form-control" placeholder="Ejemplo: 10037251436" required
                                         name='cedula' id="cedula">
                                     <div class="invalid-feedback">
-                                        *Por favor digite su nombre.
+                                        *Por favor digite su cedula.
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="evaluar5">TELÉFONO:</label>
+                                    <label for="telefono">TELÉFONO:</label>
                                     <input type="number" class="form-control" placeholder="Ejemplo: 317 123 1243" required
-                                        name="evaluar5" id="evaluar6">
+                                        name="telefono" id="telefono">
                                     <div class="invalid-feedback">
                                         *Por favor Verfique su n&uacutemero de tel&eacutefono.
                                     </div>
@@ -65,14 +65,14 @@
                                 <div class="form-group col-md-6">
                                     <label for="evaluar4">E-MAIL:</label>
                                     <input type="email" class="form-control" placeholder="Ejemplo: Andres12@gmail.com"
-                                        required name="evaluar4" id="evaluar4">
+                                        required name="email" id="email">
                                     <div class="invalid-feedback">
                                         *Por favor Verfique su direcci&oacuten de Correo electr&oacutenico.
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="evaluar7">ASUNTO:</label>
-                                    <select id="evaluar7" class="form-control" name='evaluar7' id="evaluar7" required>
+                                    <select id="asunto" class="form-control" name='asunto' id="asunto" required>
                                         <option selected disable value>-- Seleccionar --</option>
                                         <option>Petición</option>
                                         <option>Queja</option>
@@ -98,7 +98,7 @@
                                     <label for="sedes">SEDES:</label>
                                     <select class="form-control" name='sedes' id="sedes" required>
                                         <option selected disable value="">-- Seleccionar --</option>
-                                        <option value=" gerenciaapartado@nefrouros.net">Apartadó</option>
+                                        <option value="gerenciaapartado@nefrouros.net">Apartadó</option>
                                         <option value="gerenciaarmenia@nefrouros.net">Armenia</option>
                                         <option value="gerencianefroservicios@nefrouros.net">Barrancabermeja</option>
                                         <option value="gerenciabarranquilla@nefrouros.net">Barranquilla</option>
@@ -134,9 +134,9 @@
                                 <div class="form-group col-md-6">
                                     <label for="evaluar">SERVICIO RECIBIDO:</label>
                                     <input type="text" class="form-control" placeholder="Ejemplo: Diálisis peritoneal"
-                                        required name="evaluar4" id="evaluar4">
+                                        required name="serviceRecibed" id="serviceRecibed">
                                     <div class="invalid-feedback">
-                                        *Por favor Verfique su direcci&oacuten de Correo electr&oacutenico.
+                                        *Por favor Verfique el campo
                                     </div>
                                 </div>
 
@@ -144,7 +144,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="evaluar1">FECHA DE ATENCIÓN:</label>
-                                    <input type="date" class="form-control " id="evaluar1" name='evaluar1'
+                                    <input type="date" class="form-control " id="dateOfAttention" name='dateOfAttention'
                                         placeholder="Fecha" required>
                                     <div class="invalid-feedback">
                                         *Por favor seleccione la su fecha de en en que está diligenciando el formulario.
@@ -154,15 +154,15 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="evaluar6">ASEGURADORA DE SERVICIOS DE SALUD (EPS):</label>
-                                    <input type="text" class="form-control" placeholder="Nueva EPS" name='evaluar6'
-                                        id="evaluar6" required>
+                                    <input type="text" class="form-control" placeholder="Nueva EPS" name='entity'
+                                        id="entity" required>
                                     <div class="invalid-feedback">
                                         *Por favor Digite la entidad prestadora de salud a la que pertenece.
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="evaluar7">RÉGIMEN:</label>
-                                    <select id="evaluar7" class="form-control" name='evaluar7' id="evaluar7" required>
+                                    <select id="regimen" class="form-control" name='regimen' id="regimen" required>
                                         <option selected disable value>-- Seleccionar --</option>
                                         <option>Subsidiado</option>
                                         <option>Contributivo</option>
@@ -173,8 +173,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="evaluar12">MENSAJE:</label>
-                                    <textarea class="form-control" id="evaluar12" name="evaluar12" placeholder="Describa su mensaje" required></textarea>
+                                    <label for="summary">MENSAJE:</label>
+                                    <textarea class="form-control" id="summary" name="summary" placeholder="Describa su mensaje" required></textarea>
                                     <div class="invalid-feedback">
                                         *Por favor d&eacutejanos un comentario.
                                     </div>

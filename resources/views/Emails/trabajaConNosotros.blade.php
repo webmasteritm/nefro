@@ -45,11 +45,11 @@
                                                 <tr>
                                                     <td>
                                                         <div>
-                                                            <p>Fecha: {{ $datos['trabaja2'] }}</p>
-                                                            <p>Nombres: {{ $datos['trabaja1'] }}</p>
-                                                            <p>Correo electronico: {{ $datos['trabaja3'] }}</p>
-                                                            <p>Telefono: {{ $datos['trabaja4'] }}</p>                                        
-                                                            <p>Resumen del comentario: {{ $datos['trabaja6'] }}</p>                                                                                                           
+                                                            <p>Fecha: {{ $datos['date'] }}</p>
+                                                            <p>Nombres: {{ $datos['nombres'] }}</p>
+                                                            <p>Correo electronico: {{ $datos['email'] }}</p>
+                                                            <p>Telefono: {{ $datos['telefono'] }}</p>                                        
+                                                            <p>Resumen del comentario: {{ $datos['summary'] }}</p>                                                                                                           
                                                         </div>
                                                     </td>
                                                 </tr>

@@ -47,16 +47,16 @@
                         <div class="form-row">
 
                             <div class="form-group col-md-6">
-                                <label for="trabaja1">Nombre</label>
+                                <label for="nombres">Nombre</label>
                                 <input type="text" class="form-control" placeholder="Ejemplo: Andres Felipe Medina"
-                                    required name='trabaja1' id="trabaja1">
+                                    required name='nombres' id="nombres">
                                 <div class="invalid-feedback">
                                     *Por favor digite su nombre.
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="trabaja2">Fecha</label>
-                                <input type="date" class="form-control " id="trabaja2" name='trabaja2'
+                                <input type="date" class="form-control " id="date" name='date'
                                     placeholder="Fecha" required>
                                 <div class="invalid-feedback">
                                     *Por favor seleccione la su fecha de en en que está diligenciando el formulario.
@@ -65,7 +65,7 @@
                             <div class="form-group col-md-6">
                                 <label for="trabaja3">Email</label>
                                 <input type="email" class="form-control" placeholder="Ejemplo: Andres12@gmail.com"
-                                    required name="trabaja3" id="trabaja3">
+                                    required name="email" id="email">
                                 <div class="invalid-feedback">
                                     *Por favor Verfique su direcci&oacuten de Correo electr&oacutenico.
                                 </div>
@@ -75,7 +75,7 @@
                                 <label for="sedes">Sede donde desea aplicar:</label>
                                 <select class="form-control" name='sedes' id="sedes" required>
                                     <option selected disable value="">Seleccionar</option>
-                                    <option value=" gerenciaapartado@nefrouros.net">Apartadó</option>
+                                    <option value="gerenciaapartado@nefrouros.net">Apartadó</option>
                                     <option value="gerenciaarmenia@nefrouros.net">Armenia</option>
                                     <option value="gerencianefroservicios@nefrouros.net">Barrancabermeja</option>
                                     <option value="gerenciabarranquilla@nefrouros.net">Barranquilla</option>
@@ -109,12 +109,12 @@
                             <div class="form-group col-md-6">
                                 <label for="trabaja4">Tel&eacute;fono</label>
                                 <input type="number" class="form-control" placeholder="Ejemplo: 317  667 6549" required
-                                    name="trabaja4" id="evaluar6">
+                                    name="telefono" id="telefono">
                                 <div class="invalid-feedback">
                                     *Por favor Verfique su n&uacutemero de tel&eacutefono.
                                 </div>
                             </div>
-                            <div class=" form-group col-md-6">
+                            <div class="form-group col-md-6">
                                 <label for="trabaja5">Digite este código:1030</label>
                                 <input type="text" class="form-control" placeholder="verficacion" name="trabaja5"
                                     id="trabaja5" required>
@@ -136,7 +136,7 @@
 
                             <div class="form-group col-md-12">
                                 <label for="trabaja6">Comentario</label>
-                                <textarea class="form-control" id="trabaja6" name="trabaja6" placeholder="Describa el motivo de su comentario"
+                                <textarea class="form-control" id="summary" name="summary" placeholder="Describa el motivo de su comentario"
                                     required></textarea>
                                 <div class="invalid-feedback">
                                     *Por favor d&eacutejanos un comentario.
